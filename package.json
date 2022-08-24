@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/basir/mern-amazona.git"
+    "url": "git+https://github.com/paolaCaushi/diploma-mern1"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/basir/mern-amazona/issues"
+    "url": "https://github.com/paolaCaushi/diploma-mern1"
   },
-  "homepage": "https://github.com/basir/mern-amazona#readme",
+  "homepage": "https://github.com/paolaCaushi/diploma-mern1",
   "devDependencies": {
     "jest": "^28.1.3"
   },
