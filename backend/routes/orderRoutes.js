@@ -33,7 +33,7 @@ orderRouter.post(
     });
 
     const order = await newOrder.save();
-    res.status(201).send({ message: 'New Order Created', order });
+    res.status(201).send({ message: 'Porosia e re u krijua', order });
   })
 );
 
@@ -98,7 +98,7 @@ orderRouter.get(
     if (order) {
       res.send(order);
     } else {
-      res.status(404).send({ message: 'Order Not Found' });
+      res.status(404).send({ message: 'Porosia nuk u gjet!' });
     }
   })
 );
@@ -112,9 +112,9 @@ orderRouter.put(
       order.isDelivered = true;
       order.deliveredAt = Date.now();
       await order.save();
-      res.send({ message: 'Order Delivered' });
+      res.send({ message: 'Porosia u dërgua!' });
     } else {
-      res.status(404).send({ message: 'Order Not Found' });
+      res.status(404).send({ message: 'Porosia nuk u gjet!' });
     }
   })
 );
@@ -142,7 +142,7 @@ orderRouter.put(
         .messages()
         .send(
           {
-            from: 'Amazona <amazona@mg.yourdomain.com>',
+            from: 'Paola <paolacaushi2014@gmail.com>',
             to: `${order.user.name} <${order.user.email}>`,
             subject: `New order ${order._id}`,
             html: payOrderEmailTemplate(order),
@@ -156,9 +156,9 @@ orderRouter.put(
           }
         );
 
-      res.send({ message: 'Order Paid', order: updatedOrder });
+      res.send({ message: 'Porosia është paguar!', order: updatedOrder });
     } else {
-      res.status(404).send({ message: 'Order Not Found' });
+      res.status(404).send({ message: 'Porosia nuk u gjet!' });
     }
   })
 );
@@ -171,9 +171,9 @@ orderRouter.delete(
     const order = await Order.findById(req.params.id);
     if (order) {
       await order.remove();
-      res.send({ message: 'Order Deleted' });
+      res.send({ message: 'Porosia u fshi!' });
     } else {
-      res.status(404).send({ message: 'Order Not Found' });
+      res.status(404).send({ message: 'Porosia nuk u gjet!' });
     }
   })
 );

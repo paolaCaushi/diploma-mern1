@@ -28,7 +28,7 @@ export default function MapScreen() {
 
   const getUserCurrentLocation = () => {
     if (!navigator.geolocation) {
-      alert('Geolocation os not supported by this browser');
+      alert('Nuk suportohet vendondodhja gjeorgrafike!');
     } else {
       navigator.geolocation.getCurrentPosition((position) => {
         setCenter({
@@ -112,9 +112,9 @@ export default function MapScreen() {
             onPlacesChanged={onPlacesChanged}
           >
             <div className="map-input-box">
-              <input type="text" placeholder="Enter your address"></input>
+              <input type="text" placeholder="Shkruaj adresën"></input>
               <Button type="button" onClick={onConfirm}>
-                Confirm
+                Konfirmo
               </Button>
             </div>
           </StandaloneSearchBox>

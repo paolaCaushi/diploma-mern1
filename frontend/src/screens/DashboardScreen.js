@@ -52,7 +52,7 @@ export default function DashboardScreen() {
 
   return (
     <div>
-      <h1>Dashboard</h1>
+      <h1>Statistikat</h1>
       {loading ? (
         <LoadingBox />
       ) : error ? (
@@ -68,7 +68,7 @@ export default function DashboardScreen() {
                       ? summary.users[0].numUsers
                       : 0}
                   </Card.Title>
-                  <Card.Text> Users</Card.Text>
+                  <Card.Text> Përdorues </Card.Text>
                 </Card.Body>
               </Card>
             </Col>
@@ -80,7 +80,7 @@ export default function DashboardScreen() {
                       ? summary.orders[0].numOrders
                       : 0}
                   </Card.Title>
-                  <Card.Text> Orders</Card.Text>
+                  <Card.Text> Porositë </Card.Text>
                 </Card.Body>
               </Card>
             </Col>
@@ -88,45 +88,45 @@ export default function DashboardScreen() {
               <Card>
                 <Card.Body>
                   <Card.Title>
-                    $
+                  €
                     {summary.orders && summary.users[0]
                       ? summary.orders[0].totalSales.toFixed(2)
                       : 0}
                   </Card.Title>
-                  <Card.Text> Orders</Card.Text>
+                  <Card.Text> Fitimi nga Porositë </Card.Text>
                 </Card.Body>
               </Card>
             </Col>
           </Row>
           <div className="my-3">
-            <h2>Sales</h2>
+            <h2>Shitjet</h2>
             {summary.dailyOrders.length === 0 ? (
-              <MessageBox>No Sale</MessageBox>
+              <MessageBox>Nuk ka shitje</MessageBox>
             ) : (
               <Chart
                 width="100%"
                 height="400px"
                 chartType="AreaChart"
-                loader={<div>Loading Chart...</div>}
+                loader={<div>Grafiku po ngarkohet...</div>}
                 data={[
-                  ['Date', 'Sales'],
+                  ['Data', 'Shitjet €'],
                   ...summary.dailyOrders.map((x) => [x._id, x.sales]),
                 ]}
               ></Chart>
             )}
           </div>
           <div className="my-3">
-            <h2>Categories</h2>
+            <h2>Kategoritë</h2>
             {summary.productCategories.length === 0 ? (
-              <MessageBox>No Category</MessageBox>
+              <MessageBox>Pa Kategori</MessageBox>
             ) : (
               <Chart
                 width="100%"
                 height="400px"
                 chartType="PieChart"
-                loader={<div>Loading Chart...</div>}
+                loader={<div>Grafiku po ngarkohet...</div>}
                 data={[
-                  ['Category', 'Products'],
+                  ['Kategori', 'Produkte'],
                   ...summary.productCategories.map((x) => [x._id, x.count]),
                 ]}
               ></Chart>

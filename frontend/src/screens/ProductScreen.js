@@ -75,7 +75,7 @@ function ProductScreen() {
     const quantity = existItem ? existItem.quantity + 1 : 1;
     const { data } = await axios.get(`/api/products/${product._id}`);
     if (data.countInStock < quantity) {
-      window.alert('Sorry. Product is out of stock');
+      window.alert('Produkti nuk është në gjendja');
       return;
     }
     ctxDispatch({
@@ -88,7 +88,7 @@ function ProductScreen() {
   const submitHandler = async (e) => {
     e.preventDefault();
     if (!comment || !rating) {
-      toast.error('Please enter comment and rating');
+      toast.error('Ju lutem shtoni koment dhe vlerësim!');
       return;
     }
     try {
@@ -145,7 +145,7 @@ function ProductScreen() {
                 numReviews={product.numReviews}
               ></Rating>
             </ListGroup.Item>
-            <ListGroup.Item>Pirce : ${product.price}</ListGroup.Item>
+            <ListGroup.Item>Cmimi : €{product.price}</ListGroup.Item>
             <ListGroup.Item>
               <Row xs={1} md={2} className="g-2">
                 {[product.image, ...product.images].map((x) => (
@@ -165,7 +165,7 @@ function ProductScreen() {
               </Row>
             </ListGroup.Item>
             <ListGroup.Item>
-              Description:
+              Përshkrimi:
               <p>{product.description}</p>
             </ListGroup.Item>
           </ListGroup>
@@ -176,18 +176,18 @@ function ProductScreen() {
               <ListGroup variant="flush">
                 <ListGroup.Item>
                   <Row>
-                    <Col>Price:</Col>
-                    <Col>${product.price}</Col>
+                    <Col>Cmimi:</Col>
+                    <Col>€{product.price}</Col>
                   </Row>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Row>
-                    <Col>Status:</Col>
+                    <Col>Statusi:</Col>
                     <Col>
                       {product.countInStock > 0 ? (
-                        <Badge bg="success">In Stock</Badge>
+                        <Badge bg="success">Në gjendje</Badge>
                       ) : (
-                        <Badge bg="danger">Unavailable</Badge>
+                        <Badge bg="danger">Ka mbaruar</Badge>
                       )}
                     </Col>
                   </Row>
@@ -197,7 +197,7 @@ function ProductScreen() {
                   <ListGroup.Item>
                     <div className="d-grid">
                       <Button onClick={addToCartHandler} variant="primary">
-                        Add to Cart
+                        Shto në Kartë
                       </Button>
                     </div>
                   </ListGroup.Item>
@@ -208,10 +208,10 @@ function ProductScreen() {
         </Col>
       </Row>
       <div className="my-3">
-        <h2 ref={reviewsRef}>Reviews</h2>
+        <h2 ref={reviewsRef}>Vlerësimi</h2>
         <div className="mb-3">
           {product.reviews.length === 0 && (
-            <MessageBox>There is no review</MessageBox>
+            <MessageBox>Nuk është vendosur asnjë vlerësim</MessageBox>
           )}
         </div>
         <ListGroup>
@@ -227,20 +227,20 @@ function ProductScreen() {
         <div className="my-3">
           {userInfo ? (
             <form onSubmit={submitHandler}>
-              <h2>Write a customer review</h2>
+              <h2>Jepni vlerësimin</h2>
               <Form.Group className="mb-3" controlId="rating">
-                <Form.Label>Rating</Form.Label>
+                <Form.Label>Vlerësimi</Form.Label>
                 <Form.Select
                   aria-label="Rating"
                   value={rating}
                   onChange={(e) => setRating(e.target.value)}
                 >
-                  <option value="">Select...</option>
-                  <option value="1">1- Poor</option>
-                  <option value="2">2- Fair</option>
-                  <option value="3">3- Good</option>
-                  <option value="4">4- Very good</option>
-                  <option value="5">5- Excelent</option>
+                  <option value="">Zgjidh...</option>
+                  <option value="1">1- Dobët</option>
+                  <option value="2">2- Mjaftueshëm</option>
+                  <option value="3">3- Mirë</option>
+                  <option value="4">4- Shumë Mirë</option>
+                  <option value="5">5- Shkëlqyeshëm</option>
                 </Form.Select>
               </Form.Group>
               <FloatingLabel
@@ -250,7 +250,7 @@ function ProductScreen() {
               >
                 <Form.Control
                   as="textarea"
-                  placeholder="Leave a comment here"
+                  placeholder="Shkruani një koment këtu"
                   value={comment}
                   onChange={(e) => setComment(e.target.value)}
                 />
@@ -258,18 +258,18 @@ function ProductScreen() {
 
               <div className="mb-3">
                 <Button disabled={loadingCreateReview} type="submit">
-                  Submit
+                  Konfirmo
                 </Button>
                 {loadingCreateReview && <LoadingBox></LoadingBox>}
               </div>
             </form>
           ) : (
             <MessageBox>
-              Please{' '}
+              Ju lutemi{' '}
               <Link to={`/signin?redirect=/product/${product.slug}`}>
-                Sign In
+                Hyni
               </Link>{' '}
-              to write a review
+              për të vendosur vlerësimin
             </MessageBox>
           )}
         </div>

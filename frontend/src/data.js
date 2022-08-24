@@ -3,7 +3,7 @@ const data = {
     {
       name: 'Nike Slim shirt',
       slug: 'nike-slim-shirt',
-      category: 'Shirts',
+      category: 'Bluza',
       image: '/images/p1.jpg', // 679px × 829px
       price: 120,
       countInStock: 10,
@@ -15,7 +15,7 @@ const data = {
     {
       name: 'Adidas Fit Shirt',
       slug: 'adidas-fit-shirt',
-      category: 'Shirts',
+      category: 'Bluza',
       image: '/images/p2.jpg',
       price: 250,
       countInStock: 20,
@@ -27,7 +27,7 @@ const data = {
     {
       name: 'Nike Slim Pant',
       slug: 'nike-slim-pant',
-      category: 'Pants',
+      category: 'Pantallona',
       image: '/images/p3.jpg',
       price: 25,
       countInStock: 15,
@@ -39,7 +39,7 @@ const data = {
     {
       name: 'Adidas Fit Pant',
       slug: 'adidas-fit-pant',
-      category: 'Pants',
+      category: 'Pantallona',
       image: '/images/p4.jpg',
       price: 65,
       countInStock: 5,
@@ -47,6 +47,18 @@ const data = {
       rating: 4.5,
       numReviews: 10,
       description: 'high quality product',
+    },
+    {
+      name: 'Smartphone',
+      slug: 'Iphone 12',
+      category: 'Telefona',
+      image: '/images/p1.jpg',
+      price: 900,
+      countInStock: 2,
+      brand: 'Apple',
+      rating: 5,
+      numReviews: 1,
+      description: 'Iphone 12 Pro Max 256GB',
     },
   ],
 };

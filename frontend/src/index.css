@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #114c87;
+  border-color: #5197dd;
 }
 .site-container {
   min-height: 100vh;
@@ -14,8 +16,8 @@ main {
 }
 .btn-primary,
 .btn-outline-primary {
-  background-color: #f0c040;
-  color: #000000;
+  background-color: #4040c9;
+  color: #bb7ac7;
 }
 .products {
   display: flex;
@@ -24,11 +26,11 @@ main {
 }
 
 .rating span {
-  color: #ffc000;
+  color: #b41e1e;
 }
 
 .product {
-  border: 1px #404040 solid;
+  border: 1px #29c4a8 solid;
   margin: 1rem;
 }
 .product img {
@@ -49,24 +51,27 @@ main {
 }
 
 .checkout-steps > div {
-  border-bottom: 0.2rem solid #a0a0a0;
-  color: #a0a0a0;
+  border-bottom: 0.2rem solid #be8e8e;
+  color: #bc8484;
 }
 .checkout-steps > div.active {
-  border-bottom: 0.2rem solid #f08000;
-  color: #f08000;
+  border-bottom: 0.2rem solid #29b321;
+  color: #0fcc61;
 }
 
 /* sidebar */
 .navbar-brand {
   font-weight: bold;
+  font-style: italic;
+  padding: 1rem;
+  margin-left: 1rem;
 }
 .side-navbar {
   width: 240px;
   height: 100%;
   position: absolute;
   left: -300px;
-  background-color: #100901;
+  background-color: #2a2e2e;
   transition: 0.5s;
 }
 
@@ -92,6 +97,8 @@ main {
 .full-box header,
 .full-box footer {
   display: none;
+  padding: 1rem;
+  margin-bottom: 1rem;
 }
 .full-box .container {
   height: 100vh;

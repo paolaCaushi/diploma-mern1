@@ -36,37 +36,41 @@ const reducer = (state, action) => {
 
 const prices = [
   {
-    name: '$1 to $50',
+    name: '€1 deri €50',
     value: '1-50',
   },
   {
-    name: '$51 to $200',
+    name: '€51 deri €200',
     value: '51-200',
   },
   {
-    name: '$201 to $1000',
+    name: '€201 deri €1000',
     value: '201-1000',
+  },
+  {
+    name: '€1001 deri €3000',
+    value: '1001-3000'
   },
 ];
 
 export const ratings = [
   {
-    name: '4stars & up',
+    name: '4 yje',
     rating: 4,
   },
 
   {
-    name: '3stars & up',
+    name: '3 yje',
     rating: 3,
   },
 
   {
-    name: '2stars & up',
+    name: '2 yje',
     rating: 2,
   },
 
   {
-    name: '1stars & up',
+    name: '1 yll',
     rating: 1,
   },
 ];
@@ -130,11 +134,11 @@ export default function SearchScreen() {
   return (
     <div>
       <Helmet>
-        <title>Search Products</title>
+        <title>Kërko Produkte</title>
       </Helmet>
       <Row>
         <Col md={3}>
-          <h3>Department</h3>
+          <h3>Kategoria e Produktit</h3>
           <div>
             <ul>
               <li>
@@ -142,7 +146,7 @@ export default function SearchScreen() {
                   className={'all' === category ? 'text-bold' : ''}
                   to={getFilterUrl({ category: 'all' })}
                 >
-                  Any
+                  Të gjitha
                 </Link>
               </li>
               {categories.map((c) => (
@@ -158,14 +162,14 @@ export default function SearchScreen() {
             </ul>
           </div>
           <div>
-            <h3>Price</h3>
+            <h3>Cmimi</h3>
             <ul>
               <li>
                 <Link
                   className={'all' === price ? 'text-bold' : ''}
                   to={getFilterUrl({ price: 'all' })}
                 >
-                  Any
+                  Të gjitha
                 </Link>
               </li>
               {prices.map((p) => (
@@ -181,7 +185,7 @@ export default function SearchScreen() {
             </ul>
           </div>
           <div>
-            <h3>Avg. Customer Review</h3>
+            <h3>Vlerësimi mesatar</h3>
             <ul>
               {ratings.map((r) => (
                 <li key={r.name}>
@@ -189,7 +193,7 @@ export default function SearchScreen() {
                     to={getFilterUrl({ rating: r.rating })}
                     className={`${r.rating}` === `${rating}` ? 'text-bold' : ''}
                   >
-                    <Rating caption={' & up'} rating={r.rating}></Rating>
+                    <Rating caption={' '} rating={r.rating}></Rating>
                   </Link>
                 </li>
               ))}
@@ -198,7 +202,7 @@ export default function SearchScreen() {
                   to={getFilterUrl({ rating: 'all' })}
                   className={rating === 'all' ? 'text-bold' : ''}
                 >
-                  <Rating caption={' & up'} rating={0}></Rating>
+                  <Rating caption={' '} rating={0}></Rating>
                 </Link>
               </li>
             </ul>
@@ -214,11 +218,11 @@ export default function SearchScreen() {
               <Row className="justify-content-between mb-3">
                 <Col md={6}>
                   <div>
-                    {countProducts === 0 ? 'No' : countProducts} Results
+                    {countProducts === 0 ? 'Nuk ka' : countProducts} Rezultate
                     {query !== 'all' && ' : ' + query}
                     {category !== 'all' && ' : ' + category}
-                    {price !== 'all' && ' : Price ' + price}
-                    {rating !== 'all' && ' : Rating ' + rating + ' & up'}
+                    {price !== 'all' && ' : Cmimi ' + price}
+                    {rating !== 'all' && ' : Vlerësimi ' + rating }
                     {query !== 'all' ||
                     category !== 'all' ||
                     rating !== 'all' ||
@@ -233,22 +237,22 @@ export default function SearchScreen() {
                   </div>
                 </Col>
                 <Col className="text-end">
-                  Sort by{' '}
+                 Rendit sipas{' '}
                   <select
                     value={order}
                     onChange={(e) => {
                       navigate(getFilterUrl({ order: e.target.value }));
                     }}
                   >
-                    <option value="newest">Newest Arrivals</option>
-                    <option value="lowest">Price: Low to High</option>
-                    <option value="highest">Price: High to Low</option>
-                    <option value="toprated">Avg. Customer Reviews</option>
+                    <option value="newest">Më të rejat</option>
+                    <option value="lowest">Cmimi: Nga më i ulti</option>
+                    <option value="highest">Cmimi: Nga më i larti</option>
+                    <option value="toprated">Vlerësimi mesatar</option>
                   </select>
                 </Col>
               </Row>
               {products.length === 0 && (
-                <MessageBox>No Product Found</MessageBox>
+                <MessageBox>Nuk u gjet produkti</MessageBox>
               )}
 
               <Row>

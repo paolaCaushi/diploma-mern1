@@ -1,7 +1,7 @@
 {
-  "name": "amazona",
+  "name": "diploma-mern1",
   "version": "1.0.0",
-  "description": "# Lessons",
+  "description": "# diploma project",
   "main": "index.js",
   "scripts": {
     "build": "cd backend && npm install  && cd ../frontend && npm install && npm run build",
@@ -17,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/basir/mern-amazona/issues"
   },
-  "homepage": "https://github.com/basir/mern-amazona#readme"
+  "homepage": "https://github.com/basir/mern-amazona#readme",
+  "devDependencies": {
+    "jest": "^28.1.3"
+  },
+  "dependencies": {
+    "@react-google-maps/api": "^2.12.2"
+  }
 }

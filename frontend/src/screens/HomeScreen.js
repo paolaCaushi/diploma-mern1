@@ -46,9 +46,9 @@ function HomeScreen() {
   return (
     <div>
       <Helmet>
-        <title>Amazona</title>
+        <title>Paola Electronics Store</title>
       </Helmet>
-      <h1>Featured Products</h1>
+      <h1>Lista e Produkteve</h1>
       <div className="products">
         {loading ? (
           <LoadingBox />
