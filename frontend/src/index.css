@@ -132,3 +132,45 @@ main {
 button.thumbnail {
   padding: 0;
 }
+
+.table {
+  --bs-table-bg: transparent;
+  --bs-table-accent-bg: transparent;
+  --bs-table-striped-color: #212529;
+  --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
+  --bs-table-active-color: #212529;
+  --bs-table-active-bg: rgba(0, 0, 0, 0.1);
+  --bs-table-hover-color: #212529;
+  --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+  vertical-align: top;
+  border-color: #0f75dc;
+}
+
+.btn-light {
+  color: #111;
+  background-color: #1978d6;
+  border-color: #f8f9fa;
+}
+
+header {
+  display: block;
+  background-color: lightpink;
+}
+
+.small-container.container {
+  background-color: aliceblue;
+  border-radius: 25px;
+  max-width:600px;
+  max-height: 900px;
+}
+
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
+  background-color: crimson;
+}
+
+.bg-dark{
+  background: crimson;
+}

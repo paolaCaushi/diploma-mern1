@@ -86,19 +86,7 @@ const data = {
       numReviews: 1,
       description: 'high quality product',
     },
-    {
-      // _id: '5',
-      name: 'Tuta Pambuku',
-      slug: 'tuta-pambuku',
-      category: 'Tuta',
-      image: '/images/p5.jpg',
-      price: 65,
-      countInStock: 5,
-      brand: 'Puma',
-      rating: 3.5,
-      numReviews: 1,
-      description: 'hajt mo',
-    },
+    
   ],
 };
 export default data;
