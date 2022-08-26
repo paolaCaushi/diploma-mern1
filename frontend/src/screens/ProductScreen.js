@@ -103,7 +103,7 @@ function ProductScreen() {
       dispatch({
         type: 'CREATE_SUCCESS',
       });
-      toast.success('Review submitted successfully');
+      toast.success('Vleresimi u shtua!');
       product.reviews.unshift(data.review);
       product.numReviews = data.numReviews;
       product.rating = data.rating;

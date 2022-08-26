@@ -159,7 +159,7 @@ export default function PlaceOrderScreen() {
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Row>
-                    <Col>Taksa</Col>
+                    <Col>TVSH</Col>
                     <Col>€{cart.taxPrice.toFixed(2)}</Col>
                   </Row>
                 </ListGroup.Item>
