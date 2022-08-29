@@ -122,7 +122,7 @@ function App() {
                     </Link>
                   )}
                   {userInfo && userInfo.isAdmin && (
-                    <NavDropdown title="Paneli i Adminit" id="admin-nav-dropdown">
+                    <NavDropdown title="Paneli i Shitësit/Adminit" id="admin-nav-dropdown">
                       <LinkContainer to="/admin/dashboard">
                         <NavDropdown.Item>Dashboard</NavDropdown.Item>
                       </LinkContainer>
