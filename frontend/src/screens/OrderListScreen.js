@@ -118,12 +118,12 @@ export default function OrderListScreen() {
                 <td>{order.user ? order.user.name : 'TEST '}</td>
                 <td>{order.createdAt}</td>
                 <td>{order.totalPrice.toFixed(2)}</td>
-                <td>{order.isPaid ? order.paidAt : 'Po'}</td>
+                <td>{order.isPaid ? order.paidAt : order.createdAt}</td>
 
                 <td>
                   {order.isDelivered
                     ? order.deliveredAt
-                    : 'Po'}
+                    : order.shippingAddress.address}
                 </td>
                 <td>
                   <Button

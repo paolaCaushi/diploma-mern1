@@ -138,7 +138,7 @@ export default function SearchScreen() {
       </Helmet>
       <Row>
         <Col md={3}>
-          <h3>Kategoria e Produktit</h3>
+          <h3>Kategoria</h3>
           <div>
             <ul>
               <li>
@@ -185,7 +185,7 @@ export default function SearchScreen() {
             </ul>
           </div>
           <div>
-            <h3>Vlerësimi mesatar</h3>
+            <h3>Vlerësimi</h3>
             <ul>
               {ratings.map((r) => (
                 <li key={r.name}>
@@ -247,7 +247,7 @@ export default function SearchScreen() {
                     <option value="newest">Më të rejat</option>
                     <option value="lowest">Cmimi: Nga më i ulti</option>
                     <option value="highest">Cmimi: Nga më i larti</option>
-                    <option value="toprated">Vlerësimi mesatar</option>
+                    <option value="toprated">Vlerësimit mesatar</option>
                   </select>
                 </Col>
               </Row>

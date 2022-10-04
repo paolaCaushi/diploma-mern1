@@ -35,6 +35,7 @@ import UserListScreen from './screens/UserListScreen';
 import UserEditScreen from './screens/UserEditScreen';
 import MapScreen from './screens/MapScreen';
 
+
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { fullBox, cart, userInfo } = state;
@@ -105,7 +106,7 @@ function App() {
                         <NavDropdown.Item>Profili i Përdoruesit</NavDropdown.Item>
                       </LinkContainer>
                       <LinkContainer to="/orderhistory">
-                        <NavDropdown.Item>Historiku i Porosive</NavDropdown.Item>
+                        <NavDropdown.Item>Historiku i Blerjeve</NavDropdown.Item>
                       </LinkContainer>
                       <NavDropdown.Divider />
                       <Link
@@ -122,7 +123,7 @@ function App() {
                     </Link>
                   )}
                   {userInfo && userInfo.isAdmin && (
-                    <NavDropdown title="Paneli i Shitësit/Adminit" id="admin-nav-dropdown">
+                    <NavDropdown title="Paneli i Adminit" id="admin-nav-dropdown">
                       <LinkContainer to="/admin/dashboard">
                         <NavDropdown.Item>Dashboard</NavDropdown.Item>
                       </LinkContainer>
@@ -265,9 +266,9 @@ function App() {
             </Routes>
           </Container>
         </main>
-        <footer>
-          <div className="text-center">All rights reserved © Paola Caushi 2022</div>
-        </footer>
+        <footer> 
+       <div className="text-center">Të drejtat e rezervuara © Paola Caushi 2022</div>
+      </footer>    
       </div>
     </BrowserRouter>
   );

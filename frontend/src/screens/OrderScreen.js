@@ -152,7 +152,7 @@ export default function OrderScreen() {
           type: 'resetOptions',
           value: {
             'client-id': clientId,
-            currency: 'USD',
+            currency: 'EUR',
           },
         });
         paypalDispatch({ type: 'setLoadingStatus', value: 'pending' });
@@ -223,7 +223,7 @@ export default function OrderScreen() {
                   Dërguar në {order.deliveredAt}
                 </MessageBox>
               ) : (
-                <MessageBox variant="success">U dërgua porosia</MessageBox>
+                <MessageBox variant="success">Po dërgohet porosia </MessageBox>
               )}
             </Card.Body>
           </Card>
@@ -238,7 +238,7 @@ export default function OrderScreen() {
                   Porosia nuk eshte paguar
                 </MessageBox>
               ) : (
-                <MessageBox variant="success"> Porosia është paguar</MessageBox>
+                <MessageBox variant="success"> Porosia u pagua në {order.createdAt}</MessageBox>
               )}
             </Card.Body>
           </Card>
@@ -323,7 +323,7 @@ export default function OrderScreen() {
                     {loadingDeliver && <LoadingBox></LoadingBox>}
                     <div className="d-grid">
                       <Button type="button" onClick={deliverOrderHandler}>
-                        Dorëzo Porosinë
+                        Mbaro Blerjen
                       </Button>
                     </div>
                   </ListGroup.Item>

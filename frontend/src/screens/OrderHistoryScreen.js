@@ -55,7 +55,7 @@ export default function OrderHistoryScreen() {
         <title>Historiku i Porosive</title>
       </Helmet>
 
-      <h1>Historiku i Porosive</h1>
+      <h1>Historiku i Blerjeve</h1>
       {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (
@@ -68,7 +68,6 @@ export default function OrderHistoryScreen() {
               <th>DATA</th>
               <th>TOTAL</th>
               <th>PAGUAR</th>
-              <th>DOREZUAR</th>
               <th>VEPRIMI</th>
             </tr>
           </thead>
@@ -78,12 +77,8 @@ export default function OrderHistoryScreen() {
                 <td>{order._id}</td>
                 <td>{order.createdAt}</td>
                 <td>{order.totalPrice.toFixed(2)}</td>
-                <td>{order.isPaid ? order.paidAt : 'Po'}</td>
-                <td>
-                  {order.isDelivered
-                    ? order.deliveredAt
-                    : 'Po'}
-                </td>
+                <td>{order.isPaid ? order.paidAt : order.createdAt}</td>
+                
                 <td>
                   <Button
                     type="button"

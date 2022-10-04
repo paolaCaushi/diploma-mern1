@@ -116,7 +116,7 @@ export default function CartScreen() {
                       onClick={checkoutHandler}
                       disabled={cartItems.length === 0}
                     >
-                      Vazhdo në Checkout
+                      Vazhdo blerjen
                     </Button>
                   </div>
                 </ListGroup.Item>

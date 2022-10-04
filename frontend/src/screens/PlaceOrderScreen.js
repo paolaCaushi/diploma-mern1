@@ -12,6 +12,7 @@ import { getError } from '../utils';
 import { Store } from '../Store';
 import CheckoutSteps from '../components/CheckoutSteps';
 import LoadingBox from '../components/LoadingBox';
+import { PayPalButtons } from '@paypal/react-paypal-js';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -42,7 +43,7 @@ export default function PlaceOrderScreen() {
   );
   cart.shippingPrice = cart.itemsPrice > 100 ? round2(0) : round2(2);
   cart.taxPrice = round2(0.20 * cart.itemsPrice);
-  cart.totalPrice = cart.itemsPrice + cart.shippingPrice + cart.taxPrice;
+  cart.totalPrice = cart.itemsPrice + cart.shippingPrice ;
 
   const placeOrderHandler = async () => {
     try {
@@ -131,7 +132,7 @@ export default function PlaceOrderScreen() {
                       <Col md={3}>
                         <span>{item.quantity}</span>
                       </Col>
-                      <Col md={3}>${item.price}</Col>
+                      <Col md={3}>€{item.price}</Col>
                     </Row>
                   </ListGroup.Item>
                 ))}
@@ -180,11 +181,14 @@ export default function PlaceOrderScreen() {
                       onClick={placeOrderHandler}
                       disabled={cart.cartItems.length === 0}
                     >
-                      Dorëzo Porosinë
+                      Mbaro Blerjen
                     </Button>
                   </div>
                   {loading && <LoadingBox></LoadingBox>}
                 </ListGroup.Item>
+                <PayPalButtons>
+                  
+                </PayPalButtons>
               </ListGroup>
             </Card.Body>
           </Card>
